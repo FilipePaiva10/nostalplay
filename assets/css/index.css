@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+@keyframes slideAnimation {
+    from {
+        top: 50%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+.anm-card {
+    animation: slideAnimation 0.3s linear;
+}
+
+

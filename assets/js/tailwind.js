@@ -14,7 +14,8 @@ tailwind.config = {
                 mtdr: '#E84D3E',
                 mtdg: '#2EAF63',
                 mtdw: '#F1C51C',
-                mtdv: '#7171AD'
+                mtdv: '#7171AD',
+                chelp: '#74c0fc'
             },
             boxShadow: {
                 etp: '0px 4px 0px #334071',
@@ -40,7 +41,8 @@ tailwind.config = {
             },
             borderRadius: {
                 in: '4px 0px 0px 4px',
-                btni: '0px 5px 5px 0px'
+                btni: '0px 5px 5px 0px',
+                chelp: '7px 7px 0px 0px',
             },
             backgroundImage: {
                 mtv: 'https://robociencia.com.br/wp-content/uploads/2023/04/BgMotivos.webp',
