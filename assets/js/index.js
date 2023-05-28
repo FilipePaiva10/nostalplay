@@ -24,6 +24,30 @@ function showResponseCard(idAftr) {
 
 }
 
+function showQtsZap() {
+
+    let question = window.document.getElementById("qtsZap");
+
+    window.document.getElementById("parentZap").addEventListener('mouseover', () => {
+
+        if(question.classList.contains("hidden")) {
+            question.classList.remove("hidden");
+            question.classList.add("relative");
+        }
+
+    });
+
+    window.document.getElementById("parentZap").addEventListener('mouseout', () => {
+
+        if(question.classList.contains("relative")) {
+            question.classList.remove("relative");
+            question.classList.add("hidden");
+        }
+
+    });
+
+}
+
 function atualizarContador() {
     var dataAtual = new Date();
     var dataFechamento = new Date();
@@ -52,6 +76,8 @@ window.onload = () => {
 
     writeCpyr("cpry");
     writeLgcy("lgcy");
+
+    showQtsZap();
 
     atualizarContador();
 

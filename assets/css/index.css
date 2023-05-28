@@ -14,8 +14,38 @@
     }
 }
 
+@keyframes QtsZapAnimation {
+    from {
+        left: 100px;
+    }
+
+    to {
+        left: -250px;
+    }
+}
+
+
 .anm-card {
     animation: slideAnimation 0.3s linear;
 }
 
+.bgArrow {
+    animation: QtsZapAnimation 0.3s linear;
+}
+
+.bgArrow::after {
+
+    content: "";
+    width: 20px;
+    height: 20px;
+
+    position: absolute;
+    right: -5px;
+    top: 10px;
+
+    background-color: #FFF;
+    rotate: 45deg;
+
+    z-index: -1;
+}
 
