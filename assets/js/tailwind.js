@@ -45,10 +45,6 @@ tailwind.config = {
                 chelp: '7px 7px 0px 0px',
             },
             backgroundImage: {
-                mtv: 'https://robociencia.com.br/wp-content/uploads/2023/04/BgMotivos.webp',
-                df: 'https://robociencia.com.br/wp-content/uploads/2023/04/diferenciais.png',
-                ctn: 'https://robociencia.com.br/wp-content/uploads/2023/05/2.png',
-                ctnl: 'url(https://robociencia.com.br/wp-content/uploads/2023/05/ctnl.png)',
                 retro: 'url(assets/img/test.png)',
                 house: 'url(assets/img/games/hose.jpg)',
                 pacman: 'url(assets/img/games/pacman.jpg)',
