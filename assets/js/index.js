@@ -72,13 +72,50 @@ function atualizarContador() {
     setTimeout(atualizarContador, 1000);
 }
 
+
+function addEvent(obj, evt, fn) {
+    if (obj.addEventListener) {
+        obj.addEventListener(evt, fn, false);
+    }
+    else if (obj.attachEvent) {
+        obj.attachEvent("on" + evt, fn);
+    }
+}
+
+addEvent(window,"load",function(e) {
+    addEvent(document, "mouseout", function(e) {
+        e = e ? e : window.event;
+        var from = e.relatedTarget || e.toElement;
+        if (!from || from.nodeName == "HTML") {
+            // Aqui você coloca o seu popup
+            //alert("left window");
+            console.log(`Dispara Popup`);
+        }
+    });
+});
+
+function showContent() {
+
+    let allElements = Array.from(window.document.querySelectorAll("[data-delay]"));
+
+    allElements.forEach(el => {
+        if(el.classList.contains("hidden")) {
+            el.classList.remove("hidden");
+        }
+    });
+
+}
+
 window.onload = () => {
 
     writeCpyr("cpry");
     writeLgcy("lgcy");
 
     showQtsZap();
-
     atualizarContador();
+
+    setTimeout(() => {
+        showContent();
+    }, [66000]);
 
 }
