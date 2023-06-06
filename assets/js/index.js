@@ -30,7 +30,7 @@ function showQtsZap() {
 
     window.document.getElementById("parentZap").addEventListener('mouseover', () => {
 
-        if(question.classList.contains("hidden")) {
+        if (question.classList.contains("hidden")) {
             question.classList.remove("hidden");
             question.classList.add("relative");
         }
@@ -39,7 +39,7 @@ function showQtsZap() {
 
     window.document.getElementById("parentZap").addEventListener('mouseout', () => {
 
-        if(question.classList.contains("relative")) {
+        if (question.classList.contains("relative")) {
             question.classList.remove("relative");
             question.classList.add("hidden");
         }
@@ -82,16 +82,39 @@ function addEvent(obj, evt, fn) {
     }
 }
 
-addEvent(window,"load",function(e) {
-    addEvent(document, "mouseout", function(e) {
+addEvent(window, "load", function (e) {
+    addEvent(document, "mouseout", function (e) {
         e = e ? e : window.event;
         var from = e.relatedTarget || e.toElement;
         if (!from || from.nodeName == "HTML") {
             // Aqui você coloca o seu popup
             //alert("left window");
-            console.log(`Dispara Popup`);
+            const myPopup = window.document.getElementById('popupExit');
+
+            if (myPopup.classList.contains("hidden")) {
+                myPopup.classList.remove("hidden");
+                myPopup.classList.add("fixed");
+            }
         }
     });
+});
+
+function closePopup() {
+    const myPopup = window.document.getElementById('popupExit');
+
+    if (myPopup.classList.contains("fixed")) {
+        myPopup.classList.add("hidden");
+        myPopup.classList.remove("fixed");
+    }
+}
+
+window.addEventListener('popstate', function (event) {
+    // Aqui você pode executar o código que deseja quando o evento de voltar página ocorrer
+    // Por exemplo, você pode exibir uma mensagem, carregar conteúdo adicional, etc.
+
+    event.preventDefault();
+
+    console.log('Quer Retornar');
 });
 
 function showContent() {
@@ -99,7 +122,7 @@ function showContent() {
     let allElements = Array.from(window.document.querySelectorAll("[data-delay]"));
 
     allElements.forEach(el => {
-        if(el.classList.contains("hidden")) {
+        if (el.classList.contains("hidden")) {
             el.classList.remove("hidden");
         }
     });
@@ -119,3 +142,4 @@ window.onload = () => {
     }, [66000]);
 
 }
+

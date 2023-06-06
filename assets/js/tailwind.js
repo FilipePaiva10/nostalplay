@@ -56,7 +56,15 @@ tailwind.config = {
                 ctn: 'translate(-50%, -50%);'
             },
             animation: {
-                spinSlow: 'spin 2s linear infinite'
+                spinSlow: 'spin 2s linear infinite',
+                bounceOne: 'bounce 2s',
+                scaleOne: 'scaleOn 1s linear'
+            },
+            keyframes: {
+                scaleOn: {
+                    '0%, 100%': { transform: 'scale(1)' },
+                    '50%': { transform: 'scale(1.15)' },
+                }
             }
         }
     }
