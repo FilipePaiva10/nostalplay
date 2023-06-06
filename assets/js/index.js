@@ -139,7 +139,7 @@ window.onload = () => {
 
     setTimeout(() => {
         showContent();
-    }, [66000]);
+    }, [500]); //66000
 
 }
 
