@@ -158,7 +158,6 @@ form.addEventListener('submit',  (event) => {
     fetch(`https://leads-nostalplay.vercel.app/api/lead`, {
         method: 'POST',
         headers: {
-            'x-api-key': "c8ea79d31f4a697cf04957e3032f18ea",
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
