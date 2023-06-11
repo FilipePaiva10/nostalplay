@@ -122,7 +122,7 @@
 
             <!-- CTA -->
             <div class="w-full flex justify-center mt-2 max-md:w-[90%] max-md:mx-auto hidden" data-delay="true">
-                <a href="https://pay.kiwify.com.br/ZC51pjz"
+                <a href="#" onclick="OpenPopupPrecheckout()"
                     class="flex gap-2 items-center p-2 px-20 max-md:px-4 py-4 rounded-lg max-md:text-[13px] text-white transition hover:scale-105 bg-[#0FD300]">
                     <img src="assets/img/logo.png" class="w-[20px] h-[20px]" alt="">
                     <b class="whitespace-nowrap">EU QUERO SENTIR A NOSTALGIA</b>
@@ -307,7 +307,7 @@
                 </div>
 
                 <div class="w-full flex justify-center mt-4 max-md:w-[90%] max-md:mx-auto">
-                    <a href="https://pay.kiwify.com.br/ZC51pjz"
+                    <a href="#" onclick="OpenPopupPrecheckout()"
                         class="flex gap-2 items-center p-2 px-20 max-md:px-4 py-4 rounded-lg  max-md:text-[14px] text-white transition hover:scale-105 bg-[#0FD300] ">
                         <img src="assets/img/logo.png" class="w-[20px] h-[20px]" alt="">
                         <b class="">EU QUERO SENTIR A NOSTALGIA</b>
@@ -452,6 +452,46 @@
                     class="mt-2 mx-auto px-4 py-2 rounded bg-red-600 text-white font-bold flex justify-center items-center gap-[10px]">
                     Voltar para o site </button>
             </div>
+        </div>
+
+    </div>
+
+
+    <div id="popupPreCheckout"
+        class="animate-scaleOnCh hidden left-0 top-0 right-0 bottom-0 flex justify-center items-center z-[999999] bg-[rgba(0,0,0,0.25)]"
+        onclick="preCheckout()">
+
+        <div class="bg-white p-4 rounded-md box-shadow  max-w-[50%] mx-auto relative z-[999999] max-md:max-w-[90%]">
+
+            <h2 class="font-bold text-2xl mb-[10px] text-center">Preencha os dados abaixo</h2>
+
+            <form action="https://leads-nostalplay-3ghncpfyd-filipepaiva10.vercel.app/" class="" data-form-id="01">
+
+                <div class="">
+                    <input type="text" name="name" class="p-4 border text-semibold w-full font-bold rounded " placeholder="Nome">
+                </div>
+
+                <div class="my-4">
+                    <input type="tel" name="tel" class="p-4 border text-semibold w-full font-bold rounded " placeholder="DDD + Whatsapp">
+                </div>
+
+                <div class="">
+                    <input type="email" name="email" class="p-4 border text-semibold w-full font-bold rounded " placeholder="email">
+                </div> 
+
+                <p class="text-center font-semibold mt-2">Seus dados estão 100% seguros</p>
+
+                <div class="">
+                    <button 
+                        class="p-4 bg-[#0FD300] text-white font-semibold w-full mt-[10px]"
+
+                        >
+                        Prosseguir para checkout
+                    </button>
+                </div>
+
+            </form>
+
         </div>
 
     </div>

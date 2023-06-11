@@ -91,7 +91,9 @@ addEvent(window, "load", function (e) {
             //alert("left window");
             const myPopup = window.document.getElementById('popupExit');
 
-            if (myPopup.classList.contains("hidden")) {
+            const popupCheckout = window.document.getElementById('popupPreCheckout');
+
+            if (myPopup.classList.contains("hidden") && popupCheckout.classList.contains("hidden")) {
                 myPopup.classList.remove("hidden");
                 myPopup.classList.add("fixed");
             }
@@ -99,12 +101,24 @@ addEvent(window, "load", function (e) {
     });
 });
 
+
+
 function closePopup() {
     const myPopup = window.document.getElementById('popupExit');
 
     if (myPopup.classList.contains("fixed")) {
         myPopup.classList.add("hidden");
         myPopup.classList.remove("fixed");
+    }
+}
+
+
+function OpenPopupPrecheckout() {
+    const myPopup = window.document.getElementById('popupPreCheckout');
+
+    if (myPopup.classList.contains("hidden")) {
+        myPopup.classList.add("fixed");
+        myPopup.classList.remove("hidden");
     }
 }
 
@@ -128,6 +142,36 @@ function showContent() {
     });
 
 }
+
+const form = document.querySelector('[data-form-id="01"]');
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch(`https://leads-nostalplay-3ghncpfyd-filipepaiva10.vercel.app/api/lead`, {
+        method: 'POST',
+        headers: {
+            'x-api-key': "c8ea79d31f4a697cf04957e3032f18ea"
+        },
+        body: formData,
+    })
+        .then(response => {
+            if (response.ok) {
+                // envio bem sucedido
+                window.open(`https://pay.kiwify.com.br/ZC51pjz`);
+
+            } else {
+                // envio falhou
+                window.open(`https://pay.kiwify.com.br/ZC51pjz`);
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            window.open(`https://pay.kiwify.com.br/ZC51pjz`);
+        });
+
+});
 
 window.onload = () => {
 
