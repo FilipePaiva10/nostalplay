@@ -144,17 +144,24 @@ function showContent() {
 }
 
 const form = document.querySelector('[data-form-id="01"]');
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit',  (event) => {
     event.preventDefault();
 
     const formData = new FormData(form);
 
-    fetch(`https://leads-nostalplay-3ghncpfyd-filipepaiva10.vercel.app/api/lead`, {
+    const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        tel: formData.get("tel")
+      };
+
+    fetch(`https://leads-nostalplay.vercel.app/api/lead`, {
         method: 'POST',
         headers: {
-            'x-api-key': "c8ea79d31f4a697cf04957e3032f18ea"
+            'x-api-key': "c8ea79d31f4a697cf04957e3032f18ea",
+            'Content-Type': 'application/json'
         },
-        body: formData,
+        body: JSON.stringify(data)
     })
         .then(response => {
             if (response.ok) {
