@@ -144,7 +144,7 @@ function showContent() {
 }
 
 const form = document.querySelector('[data-form-id="01"]');
-form.addEventListener('submit',  (event) => {
+form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const formData = new FormData(form);
@@ -153,7 +153,7 @@ form.addEventListener('submit',  (event) => {
         name: formData.get("name"),
         email: formData.get("email"),
         tel: formData.get("tel")
-      };
+    };
 
     fetch(`https://leads-nostalplay.vercel.app/api/lead`, {
         method: 'POST',
@@ -165,16 +165,16 @@ form.addEventListener('submit',  (event) => {
         .then(response => {
             if (response.ok) {
                 // envio bem sucedido
-                window.location.href(`https://pay.kiwify.com.br/ZC51pjz`);
+                window.location.href = `https://pay.kiwify.com.br/ZC51pjz`;
 
             } else {
                 // envio falhou
-                window.location.href(`https://pay.kiwify.com.br/ZC51pjz`);
+                window.location.href = `https://pay.kiwify.com.br/ZC51pjz`;
             }
         })
         .catch(error => {
             console.log(error);
-            window.location.href(`https://pay.kiwify.com.br/ZC51pjz`);
+            window.location.href = `https://pay.kiwify.com.br/ZC51pjz`;
         });
 
 });
