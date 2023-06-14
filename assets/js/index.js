@@ -165,16 +165,16 @@ form.addEventListener('submit',  (event) => {
         .then(response => {
             if (response.ok) {
                 // envio bem sucedido
-                window.open(`https://pay.kiwify.com.br/ZC51pjz`);
+                window.location.href(`https://pay.kiwify.com.br/ZC51pjz`);
 
             } else {
                 // envio falhou
-                window.open(`https://pay.kiwify.com.br/ZC51pjz`);
+                window.location.href(`https://pay.kiwify.com.br/ZC51pjz`);
             }
         })
         .catch(error => {
             console.log(error);
-            window.open(`https://pay.kiwify.com.br/ZC51pjz`);
+            window.location.href(`https://pay.kiwify.com.br/ZC51pjz`);
         });
 
 });
