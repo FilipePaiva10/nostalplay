@@ -165,16 +165,16 @@ form.addEventListener('submit', (event) => {
         .then(response => {
             if (response.ok) {
                 // envio bem sucedido
-                window.location.href = `https://pay.kiwify.com.br/ZC51pjz`;
+                window.location.href = `http://mon.net.br/2npsed`;
 
             } else {
                 // envio falhou
-                window.location.href = `https://pay.kiwify.com.br/ZC51pjz`;
+                window.location.href = `http://mon.net.br/2npsed`;
             }
         })
         .catch(error => {
             console.log(error);
-            window.location.href = `https://pay.kiwify.com.br/ZC51pjz`;
+            window.location.href = `http://mon.net.br/2npsed`;
         });
 
 });
